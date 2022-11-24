@@ -7,11 +7,20 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { MobileplansComponent } from './components/mobileplans/mobileplans.component';
+import { DthplansComponent } from './components/dthplans/dthplans.component';
+import { BroadbandplansComponent } from './components/broadbandplans/broadbandplans.component';
+import { SharedModule } from 'src/shared/shared/shared.module';
+import { MaterialModule } from 'src/material/material.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    MobileplansComponent,
+    DthplansComponent,
+    BroadbandplansComponent,
   ],
   imports: [
     BrowserModule,
@@ -19,6 +28,9 @@ import { HttpClientModule } from '@angular/common/http';
     NoopAnimationsModule,
     NgbModule,
     HttpClientModule,
+    MaterialModule,
+    SharedModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

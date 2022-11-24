@@ -1,0 +1,41 @@
+<div>
+    <mat-form-field>
+        <mat-select></mat-select>
+      </mat-form-field>
+</div>
+
+<h2>{{operator + id}} - Recharge Plans & Offers</h2>
+
+<mat-tab-group>
+    <mat-tab [label]="tab.fullName" *ngFor="let tab of mobilePlansData">
+        <h4>{{tab.fullName}}</h4>
+        <div *ngFor="let plan of tab.plans">
+            <div class="inline-block">
+                <div class="border-r border-primary">
+                    <h6>{{plan.amount}}</h6>
+               <span>{{plan.validity}}</span>
+               <span>{{plan.dailyCost}}</span>
+                </div>
+               
+               <div>
+                <mat-icon>bar_chart</mat-icon>
+                <span class="boarder">{{plan.data}}</span>
+               </div>
+               <div>
+                <mat-icon> phone</mat-icon>
+                <span class="boarder">{{plan.calls}}</span>
+               </div>
+               <div>
+                <mat-icon> message</mat-icon>
+                <span class="boarder">{{plan.sms}}</span>
+               </div>
+               <div>
+                <span class="boarder">{{plan.benefit}}</span>
+               </div>
+               
+            </div>
+            <hr>
+        </div>
+    </mat-tab>
+
+</mat-tab-group>

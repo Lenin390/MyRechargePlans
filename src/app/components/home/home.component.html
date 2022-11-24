@@ -1,4 +1,4 @@
-<ul class="nav justify-content-center nav-pills nav-tabs">
+<!-- <ul class="nav justify-content-center nav-pills nav-tabs">
     <li class="nav-item">
       <a class="nav-link active" aria-current="page" href="#">Mobile Prepaid Plans</a>
     </li>
@@ -8,4 +8,32 @@
     <li class="nav-item">
       <a class="nav-link" href="#">Broadband Plans</a>
     </li>
-  </ul>
+  </ul> -->
+  <mat-tab-group  mat-stretch-tabs="false" mat-align-tabs="center" class="example-stretched-tabs mat-elevation-z4">
+    <!-- <mat-tab label={{Catageory.label}} *ngFor="let Catageory of plansByCatageory"> -->
+      <mat-tab label="Mobile Prepaid Plans">
+        <div class="bg-white " *ngFor="let operator of mobilePlans; let i = index">
+          <div (click)="route.navigate(['/mobileplans'], { queryParams: {id: i, operator: operator.name } });" class="bg-grey operator-card flex-wrap">
+            <div class="in-line">
+            <div class="operator-logo bg-base-200 rounded-lg">
+              <!-- <img alt={{operator.slug}} title={{operator.name}} [src]="imgURL + operator.logo" decoding="async" data-nimg="true" class="img"> -->
+            </div>
+            <h4 class="text-center">{{operator.name}}</h4>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Dth Plans">
+    <div class="bg-white " *ngFor="let operator of dthPlans">
+      <div class="bg-grey operator-card flex-wrap">
+        <div class="in-line">
+        <div class="operator-logo bg-base-200 rounded-lg">
+          <!-- <img alt={{operator.slug}} title={{operator.name}} [src]="imgURL + operator.logo" decoding="async" data-nimg="true" class="img"> -->
+        </div>
+        <h4 class="text-center">{{operator.name}}</h4>
+      </div>
+    </div>
+  </div>
+</mat-tab>
+    <mat-tab label="Broadband Plans"> Broadband Plans </mat-tab>
+  </mat-tab-group>

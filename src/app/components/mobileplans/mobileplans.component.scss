@@ -1,0 +1,17 @@
+:after, :before {
+    box-sizing: border-box;
+    border: 0 solid;
+}
+.inline-block {
+    display: inline-block;
+}
+.boarder{
+    border: 0 solid; 
+}
+.border-r {
+    border-right-width: 1px;
+}
+.border-primary {
+    --tw-border-opacity: 1;
+    border-color: rgba(103,58,183,var(--tw-border-opacity));
+}
